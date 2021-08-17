@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="central-block">
+        <h1 id="money">R$ 0,00</h1>
+        <button id="click" onclick="addMoney(money)">MORE MONEY!</button>
+        <button id="button-upgrade" onclick="buyUpgrade()">Buy Upgrade (R$ 10,00)</button>
+    </div>
+    <script>
+        let money = document.querySelector("#money");
+        let click = document.querySelector("#click");
+        let upgrade = document.querySelector('#button-upgrade');
+        let moneyValue = 0;
+        let clickValue = 1;
+        let upgradevalue = 10;
+        
+        function addMoney(money){
+            moneyValue += clickValue;
+            money.innerHTML = 'R$'+ moneyValue.toFixed(2);
+        }
+        function buyUpgrade(){
+            if (moneyValue >=upgradevalue ) {
+                moneyValue -= upgradevalue;
+                clickValue++;
+                upgradevalue*=1.2;
+                money.innerHTML = 'R$'+ moneyValue.toFixed(2);
+                upgrade.innerHTML = `Buy upgrade (R$ ${upgradevalue.toFixed(2)}) `
+            }
+        }
+        </script>
+</body>
+</html>
