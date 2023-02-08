@@ -10,7 +10,7 @@ function ValidaCPf(cpfEnviado) {
 ValidaCPf.prototype.valida = function () {
   if (typeof this.cpfLimpo === "undefined") return false;
   if (this.cpfLimpo.length !== 11) return false;
-  if (this.isSequencial()) return false;
+  if (this.isSequencia()) return false;
 
   let cpfParcial = this.cpfLimpo.slice(0, -2);
   const digito1 = this.criaDigito(cpfParcial);
