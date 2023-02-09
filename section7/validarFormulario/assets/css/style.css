@@ -53,3 +53,7 @@ form button:hover, form button:active{
     padding: 10px 20px;
     color:rgb(8, 104, 148);
 }
+.error-text{
+    font-size: 12px;
+    color: red;
+}
