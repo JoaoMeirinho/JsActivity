@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: 'airbnb',
   overrides: [
     {
       env: {
@@ -12,6 +12,7 @@ module.exports = {
       files: [
         '.eslintrc.{js,cjs}',
       ],
+      parser: 'babel/eslint-parser',
       parserOptions: {
         sourceType: 'script',
       },
@@ -22,12 +23,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-multiple-empty-lines': 2,
-    'no-console': 'off',
-    'class-methods-use-this': 'off',
-    'import/first': 'off',
-    'no-param-reassign': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    camelcase: 'off',
+    'react/jsx-filename-extension': 0,
+    'react/state-in-constructor': 0,
+    'import/no-extraneous-dependencies': ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
+    'linebreak-style': 0
   },
 };
